@@ -1,0 +1,74 @@
+.pack-layout {
+  flex-direction: column;
+  padding: 0;
+  background: #fff;
+}
+
+.pack-list {
+  height: 60%;
+  width: 100%;
+  overflow-y: auto;
+  border-bottom: 3px double #333;
+}
+
+.pack-title {
+  background: #333;
+  color: #fff;
+  margin: 0;
+  padding: 4px;
+  font-size: 8px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+}
+
+.pack-item {
+  padding: 6px 10px;
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid #eee;
+}
+
+.pack-item.active {
+  background: #ffcc00;
+  border-left: 5px solid #333;
+}
+
+.pack-item .bullet {
+  font-size: 10px;
+}
+
+.item-preview {
+  height: 40%;
+  display: flex;
+  padding: 8px;
+  background: #e9e9e9;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-icon {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-icon img {
+  width: 30px;
+  image-rendering: pixelated;
+}
+
+.item-details {
+  flex-grow: 1;
+}
+
+.item-effect {
+  font-size: 7px;
+  line-height: 1.3;
+}

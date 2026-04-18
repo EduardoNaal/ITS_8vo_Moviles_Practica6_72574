@@ -4,30 +4,20 @@ import { EPokedexMenuOption, EPokedexScreen, MenuPokedexContext } from "./MenuPo
 export const MenuPokedexProvider = ({ children }: { children: ReactNode | JSX.Element | JSX.Element[] }) => {
   const [screen, setScreen] = useState(EPokedexScreen.MENU);
   const [menuOption, setMenuOption] = useState(EPokedexMenuOption.POKEDEX);
-
-  const setScreenOption = (option: EPokedexScreen) => {
-    setScreen(option);
-  };
-
-  const getScreenOption = () => {
-    return screen;
-  }
-
-  const setMenuOptionValue = (option: EPokedexMenuOption) => {
-    setMenuOption(option);
-  };
-
-  const getMenuOption = () => {
-    return menuOption;
-  }
+  const [pokemonIndex, setPokemonIndex] = useState(0);
+  const [itemIndex, setItemIndex] = useState(0);
 
   return (
     <MenuPokedexContext.Provider
       value={{
-        screen: getScreenOption(),
-        setScreen: setScreenOption,
-        menuOption: getMenuOption(),
-        setMenuOption: setMenuOptionValue,
+        screen,
+        setScreen,
+        menuOption,
+        setMenuOption,
+        pokemonIndex,
+        setPokemonIndex,
+        itemIndex,
+        setItemIndex,
       }}
     >
       {children}

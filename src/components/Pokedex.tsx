@@ -10,24 +10,31 @@ import '../theme/variables.css';
 import { Cross } from './Buttons/Cross';
 
 const Pokedex: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { menuOption, screen, setMenuOption, setScreen } = useContext(MenuPokedexContext);
+  const { menuOption, screen, setMenuOption, setScreen, setPokemonIndex, setItemIndex } = useContext(MenuPokedexContext);
   const router = useIonRouter();
   
   const onBigBlueButtonClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (screen === EPokedexScreen.MENU) {
       e.preventDefault();
       const path = EPokedexMenuOption[menuOption].toLowerCase();
+      
+      // Reiniciar los índices al entrar a una nueva pantalla
+      setPokemonIndex(0);
+      setItemIndex(0);
+
       setScreen(menuOption as unknown as EPokedexScreen)
       router.push(`/${path}`);
     }
   }
 
   const toggleScreen = () => {
-    if (screen === EPokedexScreen.EXIT) {
+    // Si estamos en cualquier pantalla que no sea el MENU, regresamos al MENU
+    if (screen !== EPokedexScreen.MENU) {
       setScreen(EPokedexScreen.MENU);
       setMenuOption(EPokedexMenuOption.POKEDEX);
       router.push('/home');
     } else {
+      // Si ya estamos en el MENU, el botón rojo actúa como "Power Off" (Salir)
       setScreen(EPokedexScreen.EXIT);
       router.push('/exit');
     }

@@ -1,0 +1,126 @@
+.pokedex-screen-content {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  overflow: hidden;
+  display: flex;
+  background: #f0f0f0;
+  font-size: 8px;
+  color: #333;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.pokedex-layout {
+  display: flex;
+  flex-direction: row;
+}
+
+/* List Column */
+.pokemon-list {
+  width: 40%;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 2px solid #333;
+  padding-right: 2px;
+}
+
+.pokemon-list::-webkit-scrollbar {
+  width: 3px;
+}
+
+.pokemon-list::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+.pokemon-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.pokemon-item {
+  padding: 4px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.pokemon-item.active {
+  background: #ffcc00;
+  color: #000;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+.pokemon-item .id {
+  opacity: 0.6;
+}
+
+/* Details Column */
+.pokemon-details {
+  width: 60%;
+  height: 100%;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: opacity 0.2s;
+}
+
+.faded {
+  opacity: 0.5;
+}
+
+.image-frame {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.details-text {
+  margin-top: 8px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-name {
+  font-size: 10px;
+  border-bottom: 3px double #333;
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+}
+
+.detail-desc {
+  font-size: 7px;
+  line-height: 1.2;
+  overflow-y: auto;
+  text-align: justify;
+}
